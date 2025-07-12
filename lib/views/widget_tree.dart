@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/data/notifiers.dart';
 import 'package:flutter_project/views/pages/home_page.dart';
 import 'package:flutter_project/views/pages/profile_page.dart';
-import 'package:flutter_project/views/pages/settings_page.dart';
 import 'package:flutter_project/views/widgets/navbar_widgets.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+
+class KConstants {
+  static const String themeModeKey = 'themeMode';
+}
 ValueNotifier<bool> isDarkModeNotifier = ValueNotifier<bool>(false);
 List<Widget> pages = [
  HomePage(),
@@ -19,7 +25,11 @@ class WidgetTree extends StatelessWidget {
          title:  Text('Flutter Project'),
          centerTitle: true,
          actions: [
-          IconButton(onPressed: (){
+          IconButton(
+            onPressed: ()async{
+            final SharedPreferences prefs = 
+            await SharedPreferences.getInstance();
+            await prefs.setBool(KConstants.themeModeKey, true);
             isDarkModeNotifier.value = !isDarkModeNotifier.value;
           }, 
           icon: ValueListenableBuilder(

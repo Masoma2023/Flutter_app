@@ -1,16 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/views/pages/welcome_page.dart';
 import 'package:flutter_project/views/widget_tree.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class KConstants {
+  static const String themeModeKey = 'themeModeKey';
+}
 
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
-  
+
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  @override
+  void initState() {
+    initThemeMode();
+    super.initState();
+    
+  }
+void initThemeMode()async{
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final bool? repeat = prefs.getBool(KConstants.themeModeKey);
+  isDarkModeNotifier.value = repeat ?? false;
+}
+
   Widget build(BuildContext context) {
     return ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder: (context, isDarkMode, child){
       return MaterialApp(
