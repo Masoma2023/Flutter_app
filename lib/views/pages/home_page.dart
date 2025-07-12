@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     child: SingleChildScrollView(
       child: Column(
         children: [
-          HeroWidget(title: 'Flittet Mapp',),
+          HeroWidget(title: 'Fluttet Mapp',),
           Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(vertical: 10.0),

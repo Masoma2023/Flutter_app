@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/views/widgets/hero_widget.dart';
-import 'package:flutter_project/views/widget_tree.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_project/views/pages/login_page.dart'; // Adjust the path as needed
 
@@ -17,7 +15,7 @@ class OnboardingPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Lottie.asset('assets/lotties/home.json', height: 499.0),
+                Lottie.asset('assets/lotties/Welcome.json', height: 499.0),
                
                 
                 SizedBox(height: 20.0),
@@ -32,7 +30,7 @@ class OnboardingPage extends StatelessWidget {
                 ),
                 FilledButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {

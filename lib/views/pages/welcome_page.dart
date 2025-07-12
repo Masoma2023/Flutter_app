@@ -18,9 +18,10 @@ class WelcomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
            
               children: [
-                Lottie.asset('asstes/lotties/welocme.json',height: 400.0),
+                Lottie.asset('assets/lotties/Hi.json',height: 400.0),
                 FittedBox(
-                  child: Text('Flutter Mapp',
+                  child: 
+                  Text('Flutter Mapp',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 50.0,
