@@ -16,3 +16,11 @@ class KTextStyle {
     
   );
 }
+class KValue {
+  static const String basicLayout = 'Basic layout';
+  static const String cleanUi = 'Clean UI';
+  static const String fixBuds = 'Fix Bugs';
+  static const String keyConcepts = 'Key Concepts';
+
+
+}

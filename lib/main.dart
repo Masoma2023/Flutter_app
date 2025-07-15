@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  @override
+  
   void initState() {
     initThemeMode();
     super.initState();
@@ -32,9 +32,11 @@ void initThemeMode()async{
   final bool? repeat = prefs.getBool(KConstants.themeModeKey);
   isDarkModeNotifier.value = repeat ?? false;
 }
-
+  @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(valueListenable: isDarkModeNotifier, builder: (context, isDarkMode, child){
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+     builder: (context, isDarkMode, child){
       return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

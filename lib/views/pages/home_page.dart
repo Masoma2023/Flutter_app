@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/data/constants.dart';
+import 'package:flutter_project/views/pages/course_page.dart';
+import 'package:flutter_project/views/widgets/container_widget.dart';
 import 'package:flutter_project/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,33 +9,37 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(20.0),
+    List<String> list = [
+      KValue.basicLayout,
+      KValue.cleanUi,
+      KValue.fixBuds,
+      KValue.keyConcepts,
+    ];
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
     child: SingleChildScrollView(
       child: Column(
         children: [
-          HeroWidget(title: 'Fluttet Mapp',),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.symmetric(vertical: 10.0),
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Basic Layout',
-                    style: KTextStyle.titleTealText,
-                    ),
-                    Text('The description of this',
-                    style: KTextStyle.descriptionText,),
-                  ],
-                ),
-              ),
-            ),
-          )
-        ],
+          SizedBox(height: 10.0,),
+          HeroWidget(
+          title: 'Fluttet Mapp',
+          nextPage: CoursePage(),
+          ),
+    SizedBox(height: 5.0),
+      ...List.generate(
+        list.length,
+        (index) {
+          return ContainerWidget(
+            title: list.elementAt(index),
+            description: 'This is a description',
+          );
+        },
       ),
+   
+        ],
+    ),
     ),
     );
+    
 }
 }

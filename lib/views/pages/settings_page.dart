@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/views/pages/onboarding.dart';
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key,
   required this.title,
@@ -142,8 +143,18 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
     
               ElevatedButton(
-              onPressed: () {},
-              child: Text('Click me'),
+              onPressed: () {
+                Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return OnboardingPage();
+                        },
+            
+                      ),
+                    );
+              },
+              child: Text('Show Flexible and Expanded'),
             ),
              FilledButton(
               onPressed: () {}, child: Text('Click me')),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/views/pages/login_page.dart';
-import 'package:flutter_project/views/pages/onboarding.dart';
+
 
 import 'package:lottie/lottie.dart';
 
@@ -43,11 +43,11 @@ class WelcomePage extends StatelessWidget {
                 SizedBox(height: 20.0),
                 TextButton(
                   onPressed: (){
-                  Navigator.pushReplacement(
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return OnboardingPage();
+                          return LoginPage(title: 'Login');
                         },
             
                       ),
