@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         children: [
           SizedBox(height: 10.0,),
           HeroWidget(
-          title: 'Fluttet Mapp',
+          title: 'Flutter Mapp',
           nextPage: CoursePage(),
           ),
     SizedBox(height: 5.0),

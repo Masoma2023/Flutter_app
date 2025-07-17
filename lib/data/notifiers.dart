@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
-ValueNotifier<int> selectedPageNotifier = ValueNotifier(0);
-ValueNotifier<bool> selectedPage = ValueNotifier(true);
+ValueNotifier<int> selectedPageNotifier = ValueNotifier<int>(0);
+

@@ -18,7 +18,7 @@ TextEditingController controllerPw = TextEditingController(text: '456');
 String confirmedEmail = '123';
 String confirmedPw = '456';
 
-  @override
+
 @override
 void initState() {
   print('initState');
@@ -78,7 +78,7 @@ void initState() {
                     onPressed: () {
                       onLoginPressed();
                     },
-                    style: ElevatedButton.styleFrom(
+                    style: FilledButton.styleFrom(
                       minimumSize: Size(double.infinity, 40.0),
                     ),
                     child: Text('Login'),
@@ -105,5 +105,6 @@ void initState() {
        (route) => false,
       );
     }
+    
   }
 }

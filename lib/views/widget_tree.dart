@@ -3,7 +3,7 @@ import 'package:flutter_project/data/notifiers.dart';
 import 'package:flutter_project/views/pages/home_page.dart';
 import 'package:flutter_project/views/pages/profile_page.dart';
 import 'package:flutter_project/views/widgets/navbar_widgets.dart';
-
+import 'package:flutter_project/views/pages/settings_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -25,21 +25,34 @@ class WidgetTree extends StatelessWidget {
          title:  Text('Flutter Project'),
          centerTitle: true,
          actions: [
+          // IconButton(
+          //   onPressed: ()async{
+          //   final SharedPreferences prefs = 
+          //   await SharedPreferences.getInstance();
+          //   await prefs.setBool(KConstants.themeModeKey, true);
+          //   isDarkModeNotifier.value = !isDarkModeNotifier.value;
+          // }, 
           IconButton(
-            onPressed: ()async{
-            final SharedPreferences prefs = 
-            await SharedPreferences.getInstance();
-            await prefs.setBool(KConstants.themeModeKey, true);
-            isDarkModeNotifier.value = !isDarkModeNotifier.value;
-          }, 
-          icon: ValueListenableBuilder(
-            valueListenable: isDarkModeNotifier,
-             builder: (context, isDarkMode, child){
-            return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode,);
-          }),),
+  onPressed: () async {
+    isDarkModeNotifier.value = !isDarkModeNotifier.value;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(KConstants.themeModeKey, isDarkModeNotifier.value);
+  },
+  icon: ValueListenableBuilder(
+    valueListenable: isDarkModeNotifier,
+    builder: (context, isDarkMode, child) {
+      return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
+    },
+  ),
+),
+         
+          
           IconButton(
             onPressed: (){
-              
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage(title: 'Settings')),
+              );
             },
             icon: Icon(Icons.settings),
           ),

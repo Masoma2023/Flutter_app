@@ -33,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-                    ElevatedButton(
+                    FilledButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     duration: Duration(seconds: 5),
@@ -50,7 +50,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 thickness: 2.0,
                 endIndent: 200.0,
               ),
-              ElevatedButton(
+              FilledButton(
                 onPressed: () {
                   showDialog(context: context, builder: (context){
                     return AlertDialog(

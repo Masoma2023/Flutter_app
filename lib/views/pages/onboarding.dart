@@ -41,7 +41,7 @@ class OnboardingPage extends StatelessWidget {
                     );
                     
                   },
-                  style: ElevatedButton.styleFrom(
+                  style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
                   child: Text('Next'),
